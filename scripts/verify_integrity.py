@@ -21,11 +21,25 @@ def get_evolution_config():
         
         header = content.split("---")[1]
         config = {}
+        required_keys = ["version", "max_history_size"]
+        found_keys = []
+        
         for line in header.split("\n"):
+            line = line.strip()
+            if not line: continue
             if "evolution:" in line: continue
-            if line.startswith("  ") and ":" in line:
+            if ":" in line:
                 k, v = line.split(":", 1)
-                config[k.strip()] = v.strip().strip('"')
+                k = k.strip()
+                config[k] = v.strip().strip('"')
+                if k in required_keys:
+                    found_keys.append(k)
+        
+        missing = [k for k in required_keys if k not in found_keys]
+        if missing:
+            print(f"ERROR: Missing metadata: {', '.join(missing)}")
+            return None
+            
         return config
     except Exception as e:
         print(f"ERROR: Metadata parse failed: {e}")

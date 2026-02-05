@@ -41,4 +41,4 @@ If `count(journals/) >= meditation_threshold`:
 3. **Rollback**: If verification fails, revert changes and log the failure.
 
 ### Phase 4: Archival
-1. **Package**: Run `python3 scripts/archive.py` to move processed journals to long-term storage and update `archives/HISTORY.md`.
+1. **Archive**: After successful verification, run `python3 scripts/archive.py` to move processed journals to long-term storage and update `archives/HISTORY.md`.
