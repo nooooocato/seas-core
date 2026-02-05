@@ -4,7 +4,7 @@ import sys
 
 def verify_structure():
     required_dirs = ["journals", "archives", "scripts", "references"]
-    required_files = ["SKILL.md", "references/SPECIFICATION.md"]
+    required_files = ["SKILL.md", "references/Meta-Specification.md"]
     missing = [d for d in required_dirs if not os.path.isdir(d)]
     missing += [f for f in required_files if not os.path.isfile(f)]
     

@@ -12,7 +12,7 @@ evolution:
 
 # SEAS Core Template
 
-This skill implements the Self-Evolving Agent Skill specification. It is designed to be a "living" instruction set that improves based on its own execution history.
+This skill implements the [Meta-Specification](references/Meta-Specification.md). It is designed to be a "living" instruction set that improves based on its own execution history, using the Meta-Specification as the primary reference for agents to understand the boundaries and logic of self-evolution.
 
 ## Guidelines
 
